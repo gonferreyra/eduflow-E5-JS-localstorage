@@ -35,14 +35,11 @@ const showPizzas = () => {
                             `
         result.appendChild(pizzaDiv);
     })
-
-
-
 };
 
 const searchPizza = () => {
 
-    const pizzaName = pizzas.find((pizza) => pizza.nombre === nameInput.value);
+    const pizzaName = pizzas.find((pizza) => pizza.nombre.toUpperCase() === nameInput.value.toUpperCase());
 
     // console.log(pizzaName)
 
@@ -55,9 +52,7 @@ const searchPizza = () => {
         errorMessage('No se encontro la pizza. Intenta con otra');
         return;
     }
-
     showSelected(pizzaName);
-
 }
 
 const showSelected = (pizzaName) => {
@@ -81,7 +76,6 @@ const showSelected = (pizzaName) => {
                     `
         result.appendChild(pizzaDiv);
     }, 2500);
-
 }
 
 export const cleanHTML = () => {
